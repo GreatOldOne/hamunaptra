@@ -40,88 +40,6 @@
 --this exception also makes it possible to release a modified version
 --which carries forward this exception.
 
-object_mobile_vehicle_shared_barc_speeder = SharedCreatureObjectTemplate:new {
-	clientTemplateFileName = "object/mobile/vehicle/shared_barc_speeder.iff"
-	--Data below here is deprecated and loaded from the tres, keeping for easy lookups
---[[
-	acceleration = {10,3},
-	animationMapFilename = "",
-	appearanceFilename = "appearance/pv_clone_barc_speeder.sat",
-	arrangementDescriptorFilename = "",
-
-	cameraHeight = 0,
-	certificationsRequired = {},
-	clearFloraRadius = 0,
-	clientDataFile = "",
-	clientGameObjectType = 65537,
-	collisionActionBlockFlags = 0,
-	collisionActionFlags = 255,
-	collisionActionPassFlags = 0,
-	collisionHeight = 1.8,
-	collisionLength = 2.8,
-	collisionMaterialBlockFlags = 0,
-	collisionMaterialFlags = 1,
-	collisionMaterialPassFlags = 0,
-	collisionOffsetX = 0,
-	collisionOffsetZ = 0,
-	collisionRadius = 1.17,
-	containerType = 5,
-	containerVolumeLimit = 0,
-	customizationVariableMapping = {},
-
-	detailedDescription = "@monster_detail:barc_speeder",
-
-	gameObjectType = 65537,
-	gender = 0,
-
-	locationReservationRadius = 0,
-	lookAtText = "string_id_table",
-
-	movementDatatable = "datatables/movement/movement_human.iff",
-
-	niche = 0,
-	noBuildRadius = 0,
-
-	objectName = "@monster_name:barc_speeder",
-	onlyVisibleInTools = 0,
-
-	paletteColorCustomizationVariables = {},
-	portalLayoutFilename = "",
-	postureAlignToTerrain = {0,0,1,0,0,1,0,1,0,0,0,0,1,1,1},
-
-	race = 0,
-	rangedIntCustomizationVariables = {},
-
-	scale = 1,
-	scaleThresholdBeforeExtentTest = 0.5,
-	sendToClient = 1,
-	slopeModAngle = 26,
-	slopeModPercent = 0.056,
-	slotDescriptorFilename = "abstract/slot/descriptor/mount_rider.iff",
-	snapToTerrain = 1,
-	socketDestinations = {},
-	species = 90,
-	speed = {17,9},
-	stepHeight = 0.8,
-	structureFootprintFileName = "",
-	surfaceType = 0,
-	swimHeight = 0,
-
-	targetable = 1,
-	totalCellNumber = 0,
-	turnRate = {103,205},
-
-	useStructureFootprintOutline = 0,
-
-	warpTolerance = 17,
-	waterModPercent = 0.75,
-
-	clientObjectCRC = 2197788917,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/creature/base/shared_base_creature.iff", "object/mobile/shared_mobile.iff", "object/mobile/vehicle/shared_vehicle_base.iff", "object/mobile/vehicle/shared_landspeeder_base.iff"}
-]]
-}
-
-ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_barc_speeder, "object/mobile/vehicle/shared_barc_speeder.iff")
 
 object_mobile_vehicle_shared_jetpack = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/mobile/vehicle/shared_jetpack.iff"
@@ -1035,3 +953,94 @@ object_mobile_vehicle_shared_vehicle_base = SharedCreatureObjectTemplate:new {
 }
 
 ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_vehicle_base, "object/mobile/vehicle/shared_vehicle_base.iff")
+
+
+object_mobile_vehicle_shared_pod_racer_balta_podracer = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_pod_racer_balta_podracer.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_pod_racer_balta_podracer, "object/mobile/vehicle/shared_pod_racer_balta_podracer.iff")
+
+object_mobile_vehicle_shared_podracer_anakin = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_podracer_anakin.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_podracer_anakin, "object/mobile/vehicle/shared_podracer_anakin.iff")
+
+object_mobile_vehicle_shared_pod_racer_ipg_longtail = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_pod_racer_ipg_longtail.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_pod_racer_ipg_longtail, "object/mobile/vehicle/shared_pod_racer_ipg_longtail.iff")
+
+object_mobile_vehicle_shared_mechno_chair = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_mechno_chair.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_mechno_chair, "object/mobile/vehicle/shared_mechno_chair.iff")
+
+object_mobile_vehicle_shared_senate_pod = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_senate_pod.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_senate_pod, "object/mobile/vehicle/shared_senate_pod.iff")
+
+object_mobile_vehicle_shared_basilisk_war_droid = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_basilisk_war_droid.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_basilisk_war_droid, "object/mobile/vehicle/shared_basilisk_war_droid.iff")
+
+object_mobile_vehicle_shared_hover_chair = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_hover_chair.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_hover_chair, "object/mobile/vehicle/shared_hover_chair.iff")
+
+object_mobile_vehicle_shared_stap_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_stap_speeder.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_stap_speeder, "object/mobile/vehicle/shared_stap_speeder.iff")
+
+object_mobile_vehicle_shared_xj6_air_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_xj6_air_speeder.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_xj6_air_speeder, "object/mobile/vehicle/shared_xj6_air_speeder.iff")
+
+object_mobile_vehicle_shared_tcg_hk47_jetpack = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_tcg_hk47_jetpack.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_tcg_hk47_jetpack, "object/mobile/vehicle/shared_tcg_hk47_jetpack.iff")
+
+object_mobile_vehicle_shared_tcg_republic_gunship = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_tcg_republic_gunship.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_tcg_republic_gunship, "object/mobile/vehicle/shared_tcg_republic_gunship.iff")
+
+object_mobile_vehicle_shared_tcg_military_transport = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_tcg_military_transport.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_tcg_military_transport, "object/mobile/vehicle/shared_tcg_military_transport.iff")
+
+object_mobile_vehicle_shared_tcg_merr_sonn_jt12_jetpack = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_tcg_merr_sonn_jt12_jetpack.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_tcg_merr_sonn_jt12_jetpack, "object/mobile/vehicle/shared_tcg_merr_sonn_jt12_jetpack.iff")
+
+object_mobile_vehicle_shared_koro2_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_koro2_speeder.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_koro2_speeder, "object/mobile/vehicle/shared_koro2_speeder.iff")
+
+object_mobile_vehicle_shared_tcg_8_air_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_tcg_8_air_speeder.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_tcg_8_air_speeder, "object/mobile/vehicle/shared_tcg_8_air_speeder.iff")
