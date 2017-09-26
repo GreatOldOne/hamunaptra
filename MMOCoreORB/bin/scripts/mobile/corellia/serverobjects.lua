@@ -211,4 +211,8 @@ includeFile("corellia/wrix.lua")
 includeFile("corellia/zealot_of_lord_nyax.lua")
 includeFile("corellia/zo_ssa.lua")
 
+includeFile("corellia/meatlump_trooper.lua")
+includeFile("corellia/meatlump_chief.lua")
+includeFile("corellia/meatlump_boss.lua")
+
 
