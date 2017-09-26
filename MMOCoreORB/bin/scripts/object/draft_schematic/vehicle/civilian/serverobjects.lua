@@ -45,6 +45,7 @@
 --Children folder includes
 
 -- Server Objects
+includeFile("draft_schematic/vehicle/civilian/basilisk_war_droid.lua")
 includeFile("draft_schematic/vehicle/civilian/civilian_a.lua")
 includeFile("draft_schematic/vehicle/civilian/civilian_aa.lua")
 includeFile("draft_schematic/vehicle/civilian/civilian_b.lua")
