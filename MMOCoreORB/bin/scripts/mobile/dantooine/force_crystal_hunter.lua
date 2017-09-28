@@ -4,15 +4,16 @@ force_crystal_hunter = Creature:new {
 	randomNameTag = true,
 	socialGroup = "kun",
 	faction = "",
-	level = 115,
+	level = 125,
 	chanceHit = 1,
 	damageMin = 820,
 	damageMax = 1350,
-	baseXp = 10921,
-	baseHAM = 24000,
-	baseHAMmax = 30000,
+	baseXp = 15921,
+	baseHAM = 34000,
+	baseHAMmax = 40000,
 	armor = 2,
-	resists = {80,80,80,80,80,80,80,80,-1},
+	-- {kinetic, energy, electric, stun, blast, heat, cold, acid, ls}
+	resists = {75,75,35,25,75,55,35,35,10},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -31,16 +32,14 @@ force_crystal_hunter = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 3000000},
-				{group = "power_crystals", chance = 800000},
-				{group = "color_crystals", chance = 700000},
-				{group = "holocron_dark", chance = 500000},
-				{group = "holocron_light", chance = 500000},
-				{group = "melee_weapons", chance = 1000000},
-				{group = "armor_attachments", chance = 1000000},
-				{group = "clothing_attachments", chance = 1000000},
-				{group = "wearables_all", chance = 1400000},
-				{group = "force_hunter_rare", chance = 100000}
+				{group = "junk", chance = 3500000},
+				{group = "color_crystals", chance = 500000},
+				{group = "power_crystals", chance = 3000000},
+				{group = "armor_attachments", chance = 1500000},
+				{group = "force_hunter_rare", chance = 500000},
+				{group = "holocron_dark", chance = 250000},
+				{group = "holocron_light", chance = 250000},
+				{group = "clothing_attachments", chance = 500000}
 			}
 		}
 	},
