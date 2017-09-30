@@ -986,6 +986,27 @@ void ChatManagerImplementation::broadcastGalaxy(CreatureObject* player, const St
 	}
 }
 
+void ChatManagerImplementation::broadcastGalaxyCreate(CreatureObject* player, const String& message) {
+	String firstName = "SWGInfinity";
+
+	if (player != NULL)
+		firstName = player->getFirstName();
+
+	StringBuffer fullMessage;
+	fullMessage << "[" << firstName << "] " << message;
+
+	Locker locker(_this.getReferenceUnsafeStaticCast());
+	//playerMap->lock();
+
+	playerMap->resetIterator(false);
+
+	while (playerMap->hasNext(false)) {
+		ManagedReference<CreatureObject*> playerObject = playerMap->getNextValue(false);
+
+		playerObject->sendSystemMessage(fullMessage.toString());
+	}
+}
+
 void ChatManagerImplementation::broadcastMessage(BaseMessage* message) {
 	Locker _lock(_this.getReferenceUnsafeStaticCast());
 

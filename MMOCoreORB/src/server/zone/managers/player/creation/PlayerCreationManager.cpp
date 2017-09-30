@@ -609,7 +609,11 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 	ghost->addSuiBox(box);
 	playerCreature->sendMessage(box->generateMessage());
-
+	
+	String pfName = playerCreature->getFirstName();
+	String broad = "Welcome " + pfName + " To SWG Infinity.";
+	zoneServer->getChatManager()->broadcastGalaxyCreate(NULL, broad);
+	
 	return true;
 }
 
