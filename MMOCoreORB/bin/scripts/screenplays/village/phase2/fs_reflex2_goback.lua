@@ -9,7 +9,7 @@ FsReflex2GoBack = GoToLocation:new {
 	waypointDescription = "@quest/quest_journal/fs_quests_reflex2:s_03",
 	spawnPoint = { x = 5283, y = -4226 },
 	spawnPlanet = "dathomir",
-	spawnRadius = 4,
+	spawnRadius = 8,
 }
 
 -- Event handler for the enter active area event.

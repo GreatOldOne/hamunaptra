@@ -274,7 +274,7 @@ bool ForageManagerImplementation::forageGiveItems(CreatureObject* player, int fo
 	if (forageType == ForageManager::SCOUT) {
 
 		for (int i = 0; i < itemCount; i++) {
-			dice = System::random(200);
+			dice = System::random(210);
 			level = 1;
 
 			if (dice >= 0 && dice < 160) {

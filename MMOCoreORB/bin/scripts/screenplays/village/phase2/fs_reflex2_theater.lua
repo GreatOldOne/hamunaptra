@@ -8,8 +8,8 @@ FsReflex2Theater = GoToTheater:new {
 	-- Task properties
 	taskName = "FsReflex2Theater",
 	-- GoToTheater properties
-	minimumDistance = 32,
-	maximumDistance = 80,
+	minimumDistance = 64,
+	maximumDistance = 160,
 	theater = {
 		{ template = "object/static/structure/general/transport_debris_01.iff", xDiff = -0.65, zDiff = -1.38, yDiff = 4.53, heading = 0 },
 		{ template = "object/static/particle/particle_smoke.iff", xDiff = 2.51, zDiff = 2.25, yDiff = -17.23, heading = 0 }
@@ -20,7 +20,7 @@ FsReflex2Theater = GoToTheater:new {
 		{ template = "sith_shadow_pirate", x = -11.14, y = -7.26 },
 		{ template = "sith_shadow_thug", x = -2.57, y = 12.67 }
 	},
-	activeAreaRadius = 8
+	activeAreaRadius = 16
 }
 
 function FsReflex2Theater:onEnteredActiveArea(pPlayer, mobileList)

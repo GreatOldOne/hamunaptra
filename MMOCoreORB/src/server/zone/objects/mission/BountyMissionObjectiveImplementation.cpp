@@ -22,6 +22,7 @@
 #include "server/zone/objects/mission/bountyhunter/BountyHunterDroid.h"
 #include "server/zone/objects/mission/bountyhunter/events/BountyHunterTargetTask.h"
 #include "server/zone/managers/visibility/VisibilityManager.h"
+#include "server/zone/packets/player/PlayMusicMessage.h"
 
 void BountyMissionObjectiveImplementation::setNpcTemplateToSpawn(SharedObjectTemplate* sp) {
 	npcTemplateToSpawn = sp;
@@ -116,8 +117,22 @@ void BountyMissionObjectiveImplementation::complete() {
 	ManagedReference<CreatureObject*> owner = getPlayerOwner();
 	//Award bountyhunter xp.
 	owner->getZoneServer()->getPlayerManager()->awardExperience(owner, "bountyhunter", mission->getRewardCredits() / 50, true, 1);
-
 	owner->getZoneServer()->getMissionManager()->completePlayerBounty(mission->getTargetObjectId(), owner->getObjectID());
+
+	owner->sendSystemMessage("\\#66b3ff Bounty Hunter Guild Transmission: \\#e66300 Well done on completing your mission. Now get back out there!");
+	
+	// // Get TargetKill AND BH
+	// String targetName = mission->getTargetName();
+	// String hunterName = owner->getFirstName();
+	// StringBuffer zBroadcast;
+
+	// // Build broadcast message
+	// zBroadcast << "\\#66b3ff" << "Bounty Hunter Guild Broadcast: \\#ffffff Guild member \\#ff0000"<< hunterName <<"\\#ffffff has claimed the Bounty on \\#ffd700"<< targetName << "\\#ffffff.";
+	// owner->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+
+	// // Play music for the player only!!
+	// PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
+	// owner->sendMessage(pmm);
 
 	completedMission = true;
 
@@ -585,6 +600,22 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 			if (zoneServer != NULL) {
 				ManagedReference<CreatureObject*> target = zoneServer->getObject(mission->getTargetObjectId()).castTo<CreatureObject*>();
 				if (target != NULL) {
+
+					// Get TargetKill AND BH
+					String targetName = mission->getTargetName();
+					String hunterName = owner->getFirstName();
+					StringBuffer zBroadcast;
+
+					// Build broadcast message
+					zBroadcast << "\\#66b3ff" << "Bounty Hunter Guild Broadcast: \\#ffffff Guild member \\#ff0000"<< hunterName <<"\\#ffffff has claimed the Bounty on \\#ffd700"<< targetName << "\\#ffffff.";
+					owner->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+
+					// Play music for the player only!!
+					PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
+					owner->sendMessage(pmm);
+					
+
+					// Handle Jedi XP stuff here
 					int minXpLoss = -50000;
 					int maxXpLoss = -500000;
 
@@ -606,10 +637,24 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 
 			complete();
 		} else if (mission->getTargetObjectId() == killer->getObjectID() ||
-				(npcTarget != NULL && npcTarget->getObjectID() == killer->getObjectID())) {
+			(npcTarget != NULL && npcTarget->getObjectID() == killer->getObjectID())) {
 
+			// Get Hunter Name
+			String hunterName = owner->getFirstName();
+			String huntedName = killer->getFirstName();
 			owner->sendSystemMessage("@mission/mission_generic:failed"); // Mission failed
-			killer->sendSystemMessage("You have defeated a bounty hunter, ruining his mission against you!");
+			//killer->sendSystemMessage("You have defeated a bounty hunter, ruining his mission against you!");
+			killer->sendSystemMessage("\\#ff005d An Unknown Transmission: \\#e66300 Well done putting that Bounty Hunter in their place! Don't let your guard down!");
+			
+			// Setup broadcast
+			StringBuffer zBroadcast;
+			zBroadcast << "\\#ff005d Intercepted Hutt Transmission: \\#ffffff A marked target by the name of < \\#ffd700" << huntedName << "\\#ffffff > has defeated a Bounty Hunter named < \\#ff0000" << hunterName << "\\#ffffff >!";
+			killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+
+			// Setup music to play for the player upon victory!
+			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
+ 			killer->sendMessage(pmm);
+
 			fail();
 		}
 	}

@@ -17,7 +17,7 @@ object_tangible_beta_beta_terminal_wound = object_tangible_beta_shared_beta_term
      suiBoxText = "Welcome Infinitian! Please enjoy these helpful services for new players.",
 
 	itemList = {
-			"Starter Buffs", "enhance_character",
+			"Starter Buffs [Fee: 4000cr]", "enhance_character",
 			"Remove Buffs", "reset_buffs",
 			"Apply DOTs", "apply_all_dots",
 			"Clear DOTs", "clear_dots",

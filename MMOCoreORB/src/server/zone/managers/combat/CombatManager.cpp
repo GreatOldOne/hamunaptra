@@ -1414,12 +1414,16 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 	if (defender->isKnockedDown())
 		damage *= 1.5f;
 
-	// Toughness reduction
-	if (data.isForceAttack())
+    // Toughness reduction
+	if (data.isForceAttack()){
+		if (!attacker->isPlayerCreature()){
+			damage *= 0.5f;
+		}
 		damage = getDefenderToughnessModifier(defender, SharedWeaponObjectTemplate::FORCEATTACK, data.getDamageType(), damage);
-	else
+	}
+	else{
 		damage = getDefenderToughnessModifier(defender, weapon->getAttackType(), weapon->getDamageType(), damage);
-
+	}
 	// PvP Damage Reduction.
 	if (attacker->isPlayerCreature() && defender->isPlayerCreature()) {
 		damage *= 0.25;

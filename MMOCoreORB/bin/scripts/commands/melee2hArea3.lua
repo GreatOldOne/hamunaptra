@@ -53,11 +53,11 @@ Melee2hArea3Command = {
 	stateEffects = {
 	  StateEffect( 
                --documentation clearly defines dizzy instead of blind
-		DIZZY_EFFECT, 
+		BLIND_EFFECT, 
 		{}, 
-		{ "dizzy_defense", "resistance_states" }, 
+		{ "blind_defense", "resistance_states" }, 
 		{ "jedi_state_defense" }, 
-		30, 
+		70, 
 		0, 
 		30
 	  ),

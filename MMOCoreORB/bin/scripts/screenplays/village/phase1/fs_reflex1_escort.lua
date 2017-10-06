@@ -10,7 +10,7 @@ FsReflex1Escort = Escort:new {
 	returnPoint = { x = 5283, y = -4226 },
 	returnPlanet = "dathomir",
 
-	areaRadius = 8,
+	areaRadius = 16,
 }
 
 function FsReflex1Escort:onEnteredActiveArea(pPlayer)

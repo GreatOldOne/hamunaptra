@@ -9,7 +9,7 @@ ForceCrystalCaveScreenPlay = ScreenPlay:new {
 		8535511			
 	},
 	
-	lootLevel = 90,	
+	lootLevel = 110,	
 
 	-- Create chance that three items can drop from a single chest every 15minutes!
 	lootGroups = {
@@ -20,7 +20,7 @@ ForceCrystalCaveScreenPlay = ScreenPlay:new {
 				{group = "color_crystals", chance = 2000000},
 				{group = "clothing_attachments", chance = 1000000}
 			},
-			lootChance = 7500000
+			lootChance = 8500000
 		},
 		{
 			groups = {
@@ -29,7 +29,7 @@ ForceCrystalCaveScreenPlay = ScreenPlay:new {
 				{group = "color_crystals", chance = 2000000},
 				{group = "clothing_attachments", chance = 1000000}
 			},
-			lootChance = 7500000
+			lootChance = 8500000
 		},
 		{
 			groups = {
@@ -38,7 +38,7 @@ ForceCrystalCaveScreenPlay = ScreenPlay:new {
 				{group = "color_crystals", chance = 2000000},
 				{group = "clothing_attachments", chance = 1000000}
 			},
-			lootChance = 7500000
+			lootChance = 8500000
 		},			
 	},
 	
@@ -74,8 +74,8 @@ function ForceCrystalCaveScreenPlay:spawnMobiles()
 	spawnMobile("dantooine", "untrained_wielder_of_the_dark_side",360, 49.0744, -48.7665, -62.4055, 67, 8535484)
 	spawnMobile("dantooine", "untrained_wielder_of_the_dark_side",360, 52.3704, -48.7408, -63.8327, -31, 8535484)
 	spawnMobile("dantooine", "force_crystal_hunter",360, 47.2703, -48.1271, -57.1334, 141, 8535484)
-	spawnMobile("dantooine", "untrained_wielder_of_the_dark_side",360, 51.635, -48.8996, -55.2345, 97, 8535484) --make strong!
-	spawnMobile("dantooine", "untrained_wielder_of_the_dark_side",360, 46.0542, -47.1159, -8.22541, -14, 8535484) --make strong
+	spawnMobile("dantooine", "force_crystal_hunter_captain",360, 51.635, -48.8996, -55.2345, 97, 8535484) --make strong!
+	spawnMobile("dantooine", "force_crystal_hunter_captain",360, 46.0542, -47.1159, -8.22541, -14, 8535484) --make strong
 	spawnMobile("dantooine", "force_crystal_hunter",360, 48.3683, -47.0387, -7.30779, -114, 8535484)
 	spawnMobile("dantooine", "force_crystal_hunter",360, 47.5006, -47.2927, -14.2866, -39, 8535484)
 	spawnMobile("dantooine", "untrained_wielder_of_the_dark_side",360, 53.9746, -49.1282, -7.57905, 20, 8535484)
@@ -94,7 +94,7 @@ function ForceCrystalCaveScreenPlay:spawnMobiles()
 	--[8535486]
 	spawnMobile("dantooine", "force_crystal_hunter",360, 88.6484, -76.8239, -63.7984, -50, 8535486)
 	spawnMobile("dantooine", "untrained_wielder_of_the_dark_side",360, 82.1368, -76.4444, -64.9824, 173, 8535486)
-	spawnMobile("dantooine", "untrained_wielder_of_the_dark_side",360, 64.3964, -75.3098, -58.6522, -70, 8535486) -- make strong!
+	spawnMobile("dantooine", "force_crystal_hunter_captain",360, 64.3964, -75.3098, -58.6522, -70, 8535486) -- make strong!
 	spawnMobile("dantooine", "force_crystal_hunter",360, 65.9405, -75.3107, -61.9422, 22, 8535486)
 	spawnMobile("dantooine", "force_crystal_hunter",360, 67.0266, -75.4522, -59.1309, -156, 8535486)
 	spawnMobile("dantooine", "untrained_wielder_of_the_dark_side",360, 89.7134, -76.3508, -85.9711, 35, 8535486)

@@ -9,7 +9,7 @@ FsCrafting1Goto1 = GoToLocation:new {
 	waypointDescription = "@quest/quest_journal/fs_quests_craft1:s_01",
 	spawnPoint = { x = 5419, y = -4119 },
 	spawnPlanet = "dathomir",
-	spawnRadius = 4,
+	spawnRadius = 8,
 }
 
 -- Event handler for the enter active area event.

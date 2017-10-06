@@ -178,7 +178,11 @@ void VehicleControlDeviceImplementation::storeObject(CreatureObject* player, boo
 	/*if (!controlledObject->isInQuadTree())
 		return;*/
 
-	if (!force && (player->isInCombat() || player->isDead()))
+	
+	/*Stops a player storing vehicle if dead/incomband*/
+	/*if (!force && (player->isInCombat() || player->isDead()))
+		return;*/
+	if (!force && (player->isDead())) /*if player is dead it cannot despawn vehicle until its cloned*/
 		return;
 
 	if (player->isRidingMount() && player->getParent() == controlledObject) {

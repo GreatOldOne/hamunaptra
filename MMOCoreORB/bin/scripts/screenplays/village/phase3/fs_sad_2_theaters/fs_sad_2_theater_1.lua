@@ -8,8 +8,8 @@ FsSad2Theater1 = GoToTheater:new {
 	-- Task properties
 	taskName = "FsSad2Theater1",
 	-- GoToTheater properties
-	minimumDistance = 300,
-	maximumDistance = 600,
+	minimumDistance = 800,
+	maximumDistance = 2000,
 	theater = {
 		{ template = "object/static/structure/dathomir/mtn_clan_hut_s01.iff", xDiff = 0.896, zDiff = 0.236, yDiff = -0.2725, heading = 0 },
 		{ template = "object/static/structure/general/camp_campfire_logs_smoldering_s01.iff", xDiff = 0.089, zDiff = 0.0077, yDiff = 0.682, heading = -16.464 },

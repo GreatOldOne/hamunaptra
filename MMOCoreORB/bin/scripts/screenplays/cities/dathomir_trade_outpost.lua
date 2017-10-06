@@ -44,4 +44,7 @@ function DathomirTradeOutpostScreenPlay:spawnMobiles()
 	spawnMobile("dathomir", "r4", 60, 620.654, 6, 3085.98, 191.123, 0)
 	spawnMobile("dathomir", "r4", 60, 619.822, 6, 3097.36, 339.758, 0)
 	spawnMobile("dathomir", "r5", 60, 627.744, 6, 3086.77, 278.522, 0)
+
+	--Bad custom mobs
+	spawnMobile("dathomir", "dark_adept", 1800, 5093.3, 79, -3815.52, 143.232, 0)
 end

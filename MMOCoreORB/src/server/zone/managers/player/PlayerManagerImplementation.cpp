@@ -635,7 +635,7 @@ uint8 PlayerManagerImplementation::calculateIncapacitationTimer(CreatureObject* 
 	uint32 recoveryTime = (value / 5); //In seconds - 3 seconds is recoveryEvent timer
 
 	//Recovery time is gated between 10 and 60 seconds.
-	recoveryTime = Math::min(Math::max(recoveryTime, 10u), 30u);
+	recoveryTime = Math::min(Math::max(recoveryTime, 10u), 60u);
 
 	//Check for incap recovery food buff - overrides recovery time gate.
 	/*if (hasBuff(BuffCRC::FOOD_INCAP_RECOVERY)) {
@@ -1088,13 +1088,17 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 	// Jedi experience loss.
 	if(ghost->getJediState() >= 2) {
 		int jediXpCap = ghost->getXpCap("jedi_general");
-		int xpLoss = (int)(jediXpCap * -0.10);
+		int xpLoss = (int)(jediXpCap * -0.20);
 		int curExp = ghost->getExperience("jedi_general");
 
 		int negXpCap = -15000000; // Cap on negative jedi experience
 
 		if ((curExp + xpLoss) < negXpCap)
 			xpLoss = negXpCap - curExp;
+
+		if (xpLoss < -1000000)
+			xpLoss = -1000000;
+
 
 		awardExperience(player, "jedi_general", xpLoss, true);
 		StringIdChatParameter message("base_player","prose_revoke_xp");
@@ -1256,18 +1260,25 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 			ManagedReference<GroupObject*> group = attacker->getGroup();
 
 			uint32 combatXp = 0;
-		  uint32 playerTotal = 0;
+			uint32 playerTotal = 0;
 
 			Locker crossLocker(attacker, destructedObject);
+
+			for (int v = 0; v < entry->size(); ++v){
+				uint32 weapDamage = entry->elementAt(v).getValue();
+				playerTotal += weapDamage;
+			}
+
 
 			for (int j = 0; j < entry->size(); ++j) {
 				uint32 damage = entry->elementAt(j).getValue();
 				String xpType = entry->elementAt(j).getKey();
 				float xpAmount = baseXp;
 
-				//add in weapon damage split
+				//remove damage-based xp split
 				//xpAmount *= (float) damage / totalDamage;
-	      xpAmount *= (float) damage / playerTotal;
+				//add in weapon damage split
+				xpAmount *= (float) damage / playerTotal;
 
 				//Cap xp based on level
 				xpAmount = Math::min(xpAmount, calculatePlayerLevel(attacker, xpType) * 300.f);
@@ -1282,14 +1293,14 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				//Jedi experience doesn't count towards combat experience, and is earned at 20% the rate of normal experience
 				if (xpType != "jedi_general")
 					combatXp += xpAmount;
-				else
-					xpAmount *= 0.2f;
+				//else
+					//xpAmount *= 0.2f;
 
 				//Award individual expType
 				awardExperience(attacker, xpType, xpAmount);
 			}
 
-			combatXp = awardExperience(attacker, "combat_general", combatXp, true, 0.5f);
+			combatXp = awardExperience(attacker, "combat_general", combatXp, true, 0.25f);
 
 			//Check if the group leader is a squad leader
 			if (group == NULL)
@@ -1555,53 +1566,47 @@ void PlayerManagerImplementation::setExperienceMultiplier(float globalMultiplier
 	playerManager->awardExperience(playerCreature, "resource_harvesting_inorganic", 500);
  *
  */
- int PlayerManagerImplementation::awardExperience(CreatureObject* player, const String& xpType,
- 		int amount, bool sendSystemMessage, float localMultiplier, bool applyModifiers) {
+int PlayerManagerImplementation::awardExperience(CreatureObject* player, const String& xpType,
+		int amount, bool sendSystemMessage, float localMultiplier, bool applyModifiers) {
 
- 	PlayerObject* playerObject = player->getPlayerObject();
+	PlayerObject* playerObject = player->getPlayerObject();
 
- 	if (playerObject == NULL)
- 		return 0;
- 	int xp;
- 	if (amount <= 0 || xpType == "jedi_general" || xpType == "gcw_currency_rebel" || xpType == "gcw_currency_imperial" ){
- 		xp = playerObject->addExperience(xpType, amount);
- 	} else if (xpType == "imagedesigner" ||
- 		xpType == "crafting_medicine_general" ||
- 		xpType == "crafting_general" ||
- 		xpType == "crafting_bio_engineer_creature" ||
- 		xpType == "bio_engineer_dna_harvesting" ||
- 		xpType == "crafting_clothing_armor" ||
- 		xpType == "crafting_weapons_general" ||
- 		xpType == "crafting_food_general" ||
- 		xpType == "crafting_clothing_general" ||
- 		xpType == "crafting_structure_general" ||
- 		xpType == "crafting_droid_general" ||
- 		xpType == "crafting_spice" ||
- 		xpType == "shipwright" ||
- 		xpType == "bountyhunter" ||
- 		xpType == "music" ||
- 		xpType == "dance" ||
-		xpType == "scout" ||
-		xpType == "camp" ||
-		xpType == "trapping" ||
-		xpType == "medical" ||
-		xpType == "merchant" ||
- 		xpType == "entertainer_healing"){
- 			xp = playerObject->addExperience(xpType, (amount * 10));
- 			float speciesModifier = 1.f;
+	if (playerObject == NULL)
+		return 0;
+	int xp;
+	if (amount <= 0 || xpType == "jedi_general" || xpType == "gcw_currency_rebel" || xpType == "gcw_currency_imperial" ){
+		xp = playerObject->addExperience(xpType, amount);
+	} else if (xpType == "imagedesigner" ||
+		xpType == "crafting_medicine_general" ||
+		xpType == "crafting_general" ||
+		xpType == "crafting_bio_engineer_creature" ||
+		xpType == "bio_engineer_dna_harvesting" ||
+		xpType == "crafting_clothing_armor" ||
+		xpType == "crafting_weapons_general" ||
+		xpType == "crafting_food_general" ||
+		xpType == "crafting_clothing_general" ||
+		xpType == "crafting_structure_general" ||
+		xpType == "crafting_droid_general" ||
+		xpType == "crafting_spice" ||
+		xpType == "shipwright" ||
+		xpType == "music" ||
+		xpType == "dance" ||
+		xpType == "entertainer_healing"){
+			xp = playerObject->addExperience(xpType, (amount * 5));
+			float speciesModifier = 1.f;
 
- 			if (amount > 0)
- 				speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
+			if (amount > 0)
+				speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
 
- 	} else {
- 		float speciesModifier = 1.f;
- 		if (amount > 0)
- 			speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
- 		if (applyModifiers)
- 			xp = playerObject->addExperience(xpType, (int) (amount * speciesModifier * localMultiplier * globalExpMultiplier));
- 		else
- 			xp = playerObject->addExperience(xpType, (int)amount);
- 	}
+	} else {
+		float speciesModifier = 1.f;
+		if (amount > 0)
+			speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
+		if (applyModifiers)
+			xp = playerObject->addExperience(xpType, (int) (amount * speciesModifier * localMultiplier * globalExpMultiplier));
+		else
+			xp = playerObject->addExperience(xpType, (int)amount);
+	}
 
 	player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
 
@@ -5078,6 +5083,16 @@ void PlayerManagerImplementation::enhanceCharacter(CreatureObject* player) {
 
 	bool message = true;
 
+	// Credits For Buffs
+	if (player->getCashCredits() < 4000){
+		player->sendSystemMessage("Sorry, you don't have enough cash on hand to purchase a buff.");
+		return;
+	} else if (player->getCashCredits() >= 4000){
+		// Charge player for buffs
+		player->subtractCashCredits(4000);
+
+
+
 	message = message && doEnhanceCharacter(0x98321369, player, medicalBuff, medicalDuration, BuffType::MEDICAL, 0); // medical_enhance_health
 	message = message && doEnhanceCharacter(0x815D85C5, player, medicalBuff, medicalDuration, BuffType::MEDICAL, 1); // medical_enhance_strength
 	message = message && doEnhanceCharacter(0x7F86D2C6, player, medicalBuff, medicalDuration, BuffType::MEDICAL, 2); // medical_enhance_constitution
@@ -5091,6 +5106,7 @@ void PlayerManagerImplementation::enhanceCharacter(CreatureObject* player) {
 
 	if (message && player->isPlayerCreature())
 		player->sendSystemMessage("An unknown force strengthens you for battles yet to come.");
+	}
 }
 
 void PlayerManagerImplementation::sendAdminJediList(CreatureObject* player) {

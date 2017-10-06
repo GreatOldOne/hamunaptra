@@ -41,9 +41,9 @@
 --which carries forward this exception.
 
 --Determines how often exceptional and legendary items can drop.
-yellowChance = 100 -- 1 in 1,000
-exceptionalChance = 400 --1 in 100,000
-legendaryChance = 5000 --1 in 1,000,000
+yellowChance = 500 -- 1 in 500
+exceptionalChance = 2500 --1 in 2,500
+legendaryChance = 3500 --1 in 3,500
 --yellowChance = 50 --1 in 50 for testing
 --exceptionalChance = 100 --1 in 100 for testing
 --legendaryChance = 1000 --1 in 1000 for testing
@@ -54,7 +54,7 @@ exceptionalModifier = 2
 legendaryModifier = 3
 
 --The chance for random skill mods to be on looted weapons/wearables
-skillModChance = 75 -- 1 in 500
+skillModChance = 150 -- 1 in 500
 
 -- Value ranges for random dots on looted weapons (chance is set individually on the loot items)
 randomDotAttribute = {0, 8} -- See CreatureAttributes.h in src for numbers.
@@ -182,13 +182,13 @@ lootableClothingAttachmentStatMods = {
 	"food_assembly",
 	"food_experimentation",
 	"foraging",
-	"forceintimidate_accuracy",
-	"forcethrow_accuracy",
-	"forceknockdown_accuracy",
-	"forceweaken_accuracy",
-	"forcelightning_accuracy",
-	"force_choke",
-	"force_defense",
+	--"forceintimidate_accuracy",
+	--"forcethrow_accuracy",
+	--"forceknockdown_accuracy",
+	--"forceweaken_accuracy",
+	--"forcelightning_accuracy",
+	--"force_choke",
+	--"force_defense",
 	"general_assembly",
 	"general_experimentation",
 	"grenade_assembly",
@@ -214,10 +214,10 @@ lootableClothingAttachmentStatMods = {
 	"instrument_assembly",
 	"intimidate",
 	"intimidate_defense",
-	"jedi_saber_assembly",
-	"jedi_saber_experimentation",
-	"jedi_state_defense",
-	"jedi_force_power_regen",
+	--"jedi_saber_assembly",
+	--"jedi_saber_experimentation",
+	--"jedi_state_defense",
+	--"jedi_force_power_regen",
 	"keep_creature",
 	"knockdown_defense",
 	"medical_foraging",
@@ -226,8 +226,8 @@ lootableClothingAttachmentStatMods = {
 	"melee_defense",
 	"mindblast_accuracy",
 	"onehandmelee_accuracy",
-	"onehandlightsaber_accuracy",
-	"onehandlightsaber_speed",
+	--"onehandlightsaber_accuracy",
+	--"onehandlightsaber_speed",
 	--"onehandmelee_damage",
 	"onehandmelee_speed",
 	"pistol_accuracy",
@@ -237,8 +237,8 @@ lootableClothingAttachmentStatMods = {
 	"pistol_accuracy_while_standing",
 	"polearm_accuracy",
 	"polearm_speed",
-	"polearmlightsaber_accuracy",
-	"polearmlightsaber_speed",
+	--"polearmlightsaber_accuracy",
+	--"polearmlightsaber_speed",
 	"posture_change_down_defense",
 	"posture_change_up_defense",
 	"ranged_defense",
@@ -267,8 +267,8 @@ lootableClothingAttachmentStatMods = {
 	"thrown_accuracy",
 	"thrown_speed",
 	"twohandmelee_accuracy",
-	"twohandlightsaber_accuracy",
-	"twohandlightsaber_speed",
+	--"twohandlightsaber_accuracy",
+	--"twohandlightsaber_speed",
 	--"twohandmelee_damage",
 	"twohandmelee_speed",
 	"unarmed_accuracy",

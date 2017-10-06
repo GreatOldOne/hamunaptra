@@ -18,7 +18,7 @@ force_crystal_hunter_captain = Creature:new {
 	hideAmount = 0,
 	boneType = "",
 	boneAmount = 0,
-	milk = 0,
+	milk = 2 * 0,
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
@@ -32,29 +32,23 @@ force_crystal_hunter_captain = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 1500000},
-				{group = "color_crystals", chance = 1500000},
+				{group = "color_crystals", chance = 3500000},
 				{group = "power_crystals", chance = 3500000},
-				{group = "armor_attachments", chance = 1500000},
-				{group = "force_hunter_rare", chance = 500000},
 				{group = "holocron_dark", chance = 250000},
 				{group = "holocron_light", chance = 250000},
-				{group = "clothing_attachments", chance = 500000}
+				{group = "clothing_attachments", chance = 2500000}
 			},
-            lootChance = 7500000
+            lootChance = 6500000
 		},
         {
             groups = {
-				{group = "junk", chance = 1500000},
-				{group = "color_crystals", chance = 2000000},
-				{group = "power_crystals", chance = 1500000},
-				{group = "armor_attachments", chance = 1500000},
-				{group = "force_hunter_rare", chance = 500000},
+				{group = "color_crystals", chance = 3500000},
+				{group = "power_crystals", chance = 3500000},
 				{group = "holocron_dark", chance = 250000},
 				{group = "holocron_light", chance = 250000},
-				{group = "clothing_attachments", chance = 500000}
+				{group = "clothing_attachments", chance = 2500000}
 			},
-            lootChance = 7500000
+            lootChance = 6500000
         },
 	},
 	weapons = {"mixed_force_weapons"},

@@ -160,14 +160,7 @@ void MissionObjectImplementation::setRewardCredits(int creds, bool notifyClient)
 	ManagedReference<CreatureObject*> player = getParentRecursively(SceneObjectType::PLAYERCREATURE).castTo<CreatureObject*>();
 
 	if (player != NULL) {
-		if (player->isGrouped()) {
-			Reference<GroupObject*> group = player->getGroup();
-
-			rewardCreditsDivisor = group->getNumberOfPlayerMembers();
-		} else {
-			rewardCreditsDivisor = 1;
-		}
-
+		
 		MissionObjectDeltaMessage3* delta = new MissionObjectDeltaMessage3(_this.getReferenceUnsafeStaticCast());
 		delta->updateRewardCredits(creds);
 		delta->close();
@@ -225,7 +218,7 @@ void MissionObjectImplementation::updateMissionLocation() {
 	}
 
 	ManagedReference<CreatureObject*> playerCreature = getMissionObjective()->getPlayerOwner();
-	
+
 	ManagedReference<WaypointObject* > waypointToMission = this->waypointToMission;
 
 	if (playerCreature != NULL && waypointToMission != NULL) {

@@ -166,10 +166,16 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 		ManagedReference<AiAgent*> object = ghost->getActivePet(i);
 
 		if (object != NULL) {
+
+			
 			if (object->isCreature() && petType == PetManager::CREATUREPET) {
 				ManagedReference<CreatureTemplate*> activePetTemplate = object->getCreatureTemplate();
+				
+				
 
-				if (activePetTemplate == NULL || activePetTemplate->getTemplateName() == "at_st")
+				
+
+				if (activePetTemplate == NULL || activePetTemplate->getTemplateName() == "at_st" || activePetTemplate->getTemplateName() == "rebel_droideka")
 					continue;
 
 				if (++currentlySpawned >= maxPets) {
@@ -192,13 +198,23 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 				ManagedReference<CreatureTemplate*> activePetTemplate = object->getCreatureTemplate();
 				ManagedReference<CreatureTemplate*> callingPetTemplate = pet->getCreatureTemplate();
 
-				if (activePetTemplate == NULL || callingPetTemplate == NULL || activePetTemplate->getTemplateName() != "at_st")
+				if (activePetTemplate == NULL || callingPetTemplate == NULL || (activePetTemplate->getTemplateName() != "at_st" && activePetTemplate->getTemplateName() != "rebel_droideka"))
 					continue;
 
+				// Should not be able to spawn more than one ATST!
 				if (++currentlySpawned >= maxPets || (activePetTemplate->getTemplateName() == "at_st" && callingPetTemplate->getTemplateName() == "at_st")) {
 					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
 					return;
 				}
+
+				// Should not be able to spawn more than one Rebel Droideka!
+				// DOES NOT ACTUALLY WORK, LEAVE AS A PLACEHOLDER TO COME BACK TO LATER~
+				// THE ABOVE ATST CODE DOESN'T WORK EITHER.
+				if (++currentlySpawned >= maxPets || (activePetTemplate->getTemplateName() == "rebel_droideka" && callingPetTemplate->getTemplateName() == "rebel_droideka")) {
+					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
+					return;
+				}
+
 			} else if (object->isDroidObject() && petType == PetManager::DROIDPET) {
 				if (++currentlySpawned >= maxPets) {
 					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
@@ -220,10 +236,10 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 		Reference<CallPetTask*> callPet = new CallPetTask(_this.getReferenceUnsafeStaticCast(), player, "call_pet");
 
 		StringIdChatParameter message("pet/pet_menu", "call_pet_delay"); // Calling pet in %DI seconds. Combat will terminate pet call.
-		message.setDI(15);
+		message.setDI(3);
 		player->sendSystemMessage(message);
 
-		player->addPendingTask("call_pet", callPet, 15 * 1000);
+		player->addPendingTask("call_pet", callPet, 3 * 1000);
 
 		if (petControlObserver == NULL) {
 			petControlObserver = new PetControlObserver(_this.getReferenceUnsafeStaticCast());

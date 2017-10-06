@@ -17,7 +17,7 @@ nightsister_rancor = Creature:new {
 	hideAmount = 876,
 	boneType = "bone_mammal",
 	boneAmount = 776,
-	milk = 0,
+	milk = 2 * 0,
 	tamingChance = 0,
 	ferocity = 10,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
@@ -35,7 +35,7 @@ nightsister_rancor = Creature:new {
 				{group = "weapons_all", chance = 2500000},
 				{group = "wearables_all", chance = 1500000}
 			},
-			lootChance = 5600000
+			lootChance = 10000000
 		}
 	},
 	weapons = {},

@@ -6,12 +6,12 @@ janta_rockshaper = Creature:new {
 	faction = "janta_tribe",
 	level = 90,
 	chanceHit = 0.7,
-	damageMin = 495,
-	damageMax = 700,
+	damageMin = 695,
+	damageMax = 800,
 	baseXp = 7115,
-	baseHAM = 13000,
-	baseHAMmax = 15000,
-	armor = 1,
+	baseHAM = 17000,
+	baseHAMmax = 23000,
+	armor = 2,
 	resists = {30,25,-1,25,25,30,25,-1,-1},
 	meatType = "",
 	meatAmount = 0,
@@ -19,7 +19,7 @@ janta_rockshaper = Creature:new {
 	hideAmount = 0,
 	boneType = "",
 	boneAmount = 0,
-	milk = 0,
+	milk = 2 * 0,
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
@@ -31,15 +31,15 @@ janta_rockshaper = Creature:new {
 		"object/mobile/dantari_male.iff",
 		"object/mobile/dantari_female.iff"},
 	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "janta_common", chance = 1500000},
-				{group = "loot_kit_parts", chance = 3000000},
-				{group = "wearables_all", chance = 500000}
-			}
-		}
-	},
+	{
+	 groups = {
+		 {group = "janta_common", chance = 5000000},
+		 {group = "melee_weapons", chance = 2500000},
+		 {group = "clothing_attachments", chance = 2500000}
+	 },
+	 lootChance = 10000000
+		},
+		},
 	weapons = {"primitive_weapons"},
 	conversationTemplate = "",
 	attacks = merge(pikemanmaster,fencermaster,brawlermaster)

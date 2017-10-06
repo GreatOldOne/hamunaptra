@@ -45,18 +45,6 @@ includeFile("items/treasure_map.lua")
 includeFile("items/viewscreen_printer.lua")
 includeFile("items/viewscreen_reader.lua")
 
--- custom sub-folder
-includeFile("items/custom/two_handed_sword_sith.lua")
-includeFile("items/custom/blasterfist.lua")
-includeFile("items/custom/carbine_underslung.lua")
-includeFile("items/custom/lance_cryo.lua")
-includeFile("items/custom/mandoviol_smasher.lua")
-includeFile("items/custom/pistol_renegade.lua")
-includeFile("items/custom/rifle_flame_thrower_light.lua")
-includeFile("items/custom/rifle_geo_drill.lua")
-includeFile("items/custom/sword_acid.lua")
-
-
 --armor sub-folder
 includeFile("items/armor/bh_armor_belt.lua")
 includeFile("items/armor/bh_armor_bicep_l.lua")
@@ -433,7 +421,6 @@ includeFile("items/loot_kit/sculpture_structure_7.lua")
 includeFile("items/loot_schematic/cantina_chair_schematic.lua")
 includeFile("items/loot_schematic/carved_bowl_schematic.lua")
 includeFile("items/loot_schematic/closed_basket_schematic.lua")
-includeFile("items/loot_schematic/basilisk_war_droid_schematic.lua")
 includeFile("items/loot_schematic/couch_blue_schematic.lua")
 includeFile("items/loot_schematic/droid_body_schematic.lua")
 includeFile("items/loot_schematic/elegant_cabinet_schematic.lua")
@@ -844,9 +831,6 @@ includeFile("items/weapon/two_handed_sword_cleaver.lua")
 includeFile("items/weapon/two_handed_sword_katana.lua")
 includeFile("items/weapon/two_handed_sword_maul.lua")
 
---custom weapons
-includeFile("items/weapon/infinity_lightsaber_01.lua")
-
 --wearables sub folder
 includeFile("items/wearables/apron/apron_chef_s01.lua")
 includeFile("items/wearables/bandolier/bandolier_s02.lua")
@@ -1200,3 +1184,40 @@ includeFile("items/force_crystal_sunriders_destiny.lua")
 includeFile("items/force_crystal_ulics_redemption.lua")
 includeFile("items/force_crystal_windus_guile.lua")
 
+-- custom
+includeFile("items/npc/meatlump_vibro_unit.lua")
+includeFile("items/npc/meatlump_reinforcement_core.lua")
+includeFile("items/npc/meatlump_power_handler.lua")
+
+-- smuggler sub folder
+-- includeFile("items/smuggler/prototype_liquid_suspension.lua")
+-- includeFile("items/smuggler/prototype_blaster_barrel.lua")
+-- includeFile("items/smuggler/prototype_blaster_power_handler.lua")
+-- includeFile("items/smuggler/prototype_composite_shell.lua")
+-- includeFile("items/smuggler/prototype_delivery_shell.lua")
+-- includeFile("items/smuggler/prototype_projectile_barrel.lua")
+-- includeFile("items/smuggler/prototype_projectile_rifle_barrel.lua")
+-- includeFile("items/smuggler/prototype_release_mechanism.lua")
+-- includeFile("items/smuggler/prototype_rifle_blaster_barrel.lua")
+-- includeFile("items/smuggler/prototype_scope.lua")
+-- includeFile("items/smuggler/prototype_stock.lua")
+-- includeFile("items/smuggler/prototype_ubese_shell.lua")
+-- includeFile("items/smuggler/recovered_artifact.lua")
+
+------------------------------Boogles Custom------------------------------
+--Wearables--
+includeFile("items/wearables/boogles_wearables_geo/ring/beast_mastery_ring.lua")
+--Wearables--
+--Geo-Cave Stuff--
+includeFile("items/geonosian_lab/boogles_geo_items/experimental_vibro_motor.lua")
+includeFile("items/geonosian_lab/boogles_geo_items/epic_geo_power_cube_green.lua")
+includeFile("items/geonosian_lab/boogles_geo_items/epic_geo_power_cube_white.lua")
+includeFile("items/geonosian_lab/boogles_geo_items/epic_geo_power_cube_red.lua")
+includeFile("items/geonosian_lab/boogles_geo_items/epic_geo_power_cube_yellow.lua")
+includeFile("items/geonosian_lab/boogles_geo_items/experimented_rancor_hides.lua")
+includeFile("items/geonosian_lab/boogles_geo_items/experimented_rancor_padded_armor_segment.lua")
+includeFile("items/geonosian_lab/boogles_geo_items/experimented_rancor_tooth.lua")
+--Geo-Cave Stuff--
+--Weapons--
+--Weapons--
+------------------------------Boogles Custom------------------------------

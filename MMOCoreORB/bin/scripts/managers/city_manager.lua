@@ -80,12 +80,12 @@ CitizensPerRank = {1, 2, 3, 4, 5}
 RadiusPerRank = {150, 200, 300, 400, 450}
 
 -- Maximum for each rank.  ex. rank 1 = DecorationsPerRank * 1, rank 5 = DecorationsPerRank * 5
-DecorationsPerRank = 10
-TrainersPerRank = 3
-MissionTerminalsPerRank = 3
+DecorationsPerRank = 12
+TrainersPerRank = 6
+MissionTerminalsPerRank = 4
 
 -- Amount to discount city maintenance  float.  1 = 100%, .75 =75%, .5=50% etc
-maintenanceDiscount = 1.0
+maintenanceDiscount = .75
 
 --[[
 	CITIES ALLOWED PER PLANET
@@ -95,15 +95,15 @@ maintenanceDiscount = 1.0
 	The maximum amount of cities per rank is 255.
 --]]
 CitiesAllowed = {
-	{"corellia", {5, 5, 5, 5, 2}},
-	{"dantooine", {5, 5, 5, 5, 2}},
+	{"corellia", {10, 5, 5, 5, 4}},
+	{"dantooine", {10, 5, 5, 5, 4}},
 	{"dathomir", {5, 5, 5, 5, 2}},
 	{"endor", {5, 5, 5, 5, 2}},
-	{"lok", {5, 5, 5, 5, 2}},
-	{"naboo", {5, 5, 5, 5, 2}},
+	{"lok", {10, 5, 5, 5, 2}},
+	{"naboo", {10, 5, 5, 5, 4}},
 	{"rori", {5, 5, 5, 5, 2}},
-	{"talus", {5, 5, 5, 5, 2}},
-	{"tatooine", {5, 5, 5, 5, 2}},
+	{"talus", {5, 5, 5, 5, 3}},
+	{"tatooine", {10, 5, 5, 5, 4}},
 	{"yavin4", {5, 5, 5, 5, 2}}
 }
 

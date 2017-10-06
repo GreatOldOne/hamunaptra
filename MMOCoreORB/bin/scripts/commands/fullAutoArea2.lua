@@ -44,7 +44,7 @@
 FullAutoArea2Command = {
         name = "fullautoarea2",
 
-	damageMultiplier = 2.0,
+	damageMultiplier = 3.0,
 	speedMultiplier = 1.5,
 	healthCostMultiplier = 2.5,
 	actionCostMultiplier = 2.5,
@@ -65,7 +65,7 @@ FullAutoArea2Command = {
 		{}, 
 		{ "dizzy_defense", "resistance_states" }, 
 		{ "jedi_state_defense" }, 
-		30, 
+		75, 
 		0, 
 		30 
 	  ),
@@ -74,7 +74,7 @@ FullAutoArea2Command = {
 		{}, 
 		{ "blind_defense", "resistance_states" }, 
 		{ "jedi_state_defense" }, 
-		30, 
+		75, 
 		0, 
 		40 
 	  ),
@@ -83,7 +83,7 @@ FullAutoArea2Command = {
 		{}, 
 		{ "stun_defense", "resistance_states" }, 
 		{ "jedi_state_defense" }, 
-		30, 
+		75, 
 		0, 
 		30 
 	  )

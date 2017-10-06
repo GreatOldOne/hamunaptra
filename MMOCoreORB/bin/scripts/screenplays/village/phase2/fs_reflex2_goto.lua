@@ -9,10 +9,10 @@ FsReflex2Goto = GoToLocation:new {
 	waypointDescription = "@quest/quest_journal/fs_quests_reflex2:s_01",
 	spawnPoint = { x = 0, y = 0 },
 	randomLocation = true,
-	randomMinDistance = 500,
-	randomMaxDistance = 600,
+	randomMinDistance = 900,
+	randomMaxDistance = 1100,
 	spawnPlanet = "endor",
-	spawnRadius = 4,
+	spawnRadius = 8,
 }
 
 -- Event handler for the enter active area event.

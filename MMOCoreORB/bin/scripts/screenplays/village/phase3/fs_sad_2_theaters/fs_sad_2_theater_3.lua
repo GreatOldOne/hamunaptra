@@ -8,8 +8,8 @@ FsSad2Theater3 = GoToTheater:new {
 	-- Task properties
 	taskName = "FsSad2Theater3",
 	-- GoToTheater properties
-	minimumDistance = 300,
-	maximumDistance = 600,
+	minimumDistance = 800,
+	maximumDistance = 2000,
 	theater = {
 		{ template = "object/static/structure/corellia/corl_tent_small.iff", xDiff = 1.438, zDiff = 0.392, yDiff = 1.875, heading = 0 },
 		{ template = "object/static/structure/general/all_banner_generic_s01.iff", xDiff = -2.134, zDiff = -1.061, yDiff = -1.731, heading = 0 },

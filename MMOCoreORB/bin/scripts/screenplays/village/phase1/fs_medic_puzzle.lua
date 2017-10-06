@@ -2,7 +2,7 @@ local ObjectManager = require("managers.object.object_manager")
 local QuestManager = require("managers.quest.quest_manager")
 
 FsMedicPuzzle = ScreenPlay:new {
-	totalSymptoms = 3
+	totalSymptoms = 12
 }
 
 function FsMedicPuzzle:giveSymptoms(pPlayer, pNpc)

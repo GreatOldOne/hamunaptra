@@ -1786,6 +1786,7 @@ void PlayerObjectImplementation::activateForcePowerRegen() {
 	}
 
 	if (!forceRegenerationEvent->isScheduled()) {
+
 		//-----------------------------------------------------------------------
 		//-----------------------------------------------------------------------
 		// Should not be modifying the tick-rate to achieve correct force regen!
@@ -2037,6 +2038,7 @@ void PlayerObjectImplementation::doForceRegen() {
 	// Round this to nearest int.
 	uint32 tick = creature->getSkillMod("jedi_force_power_regen");
 	tick = round(tick / 5);
+
 	uint32 modifier = 1;
 
 	if (creature->isMeditating()) {

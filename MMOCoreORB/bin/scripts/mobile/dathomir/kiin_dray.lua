@@ -17,7 +17,7 @@ kiin_dray = Creature:new {
 	hideAmount = 0,
 	boneType = "",
 	boneAmount = 0,
-	milk = 0,
+	milk = 2 * 0,
 	tamingChance = 0,
 	ferocity = 8,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
@@ -27,7 +27,22 @@ kiin_dray = Creature:new {
 
 	templates = {"object/mobile/gaping_spider_recluse_giant_kiin_dray.iff"},
 	scale = 4.0,
-	lootGroups = {},
+	lootGroups = {
+	{
+		groups = {
+			{group = "power_crystals", chance = 900000},
+			{group = "nightsister_common", chance = 2600000},
+			{group = "pistols", chance = 1000000},
+			{group = "rifles", chance = 1000000},
+			{group = "carbines", chance = 1000000},
+			{group = "melee_weapons", chance = 2000000},
+			{group = "armor_attachments", chance = 500000},
+			{group = "clothing_attachments", chance = 500000},
+			{group = "wearables_rare", chance = 500000}
+		},
+		lootChance = 5000000
+		},
+	},
 	weapons = {"creature_spit_small_toxicgreen"},
 	conversationTemplate = "",
 	attacks = {

@@ -1107,6 +1107,16 @@ bool SceneObjectImplementation::isInRange3d(SceneObject* object, float range) {
 	return false;
 }
 
+void SceneObjectImplementation::rotateXaxis(int degrees) {
+	Vector3 unity(1, 0, 0);
+	direction.rotate(unity, degrees);
+}
+
+void SceneObjectImplementation::rotateYaxis(int degrees) {
+	Vector3 unity(0, 0, 1);
+	direction.rotate(unity, degrees);
+}
+
 float SceneObjectImplementation::getDistanceTo(SceneObject* targetCreature) {
 	auto targetWorldPosition = targetCreature->getWorldPosition();
 	float x = targetWorldPosition.getX();

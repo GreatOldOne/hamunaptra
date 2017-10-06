@@ -44,7 +44,7 @@
 PolearmLunge1Command = {
 	name = "polearmlunge1",
 
-	damageMultiplier = 1.0,
+	damageMultiplier = 1.5,
 	speedMultiplier = 1.5,
 	accuracyBonus = 10,
 	
@@ -56,7 +56,7 @@ PolearmLunge1Command = {
 
 	combatSpam = "lungestrike",
 
-	range = 20,
+	range = 28,
 	
 	weaponType = POLEARMWEAPON,
 

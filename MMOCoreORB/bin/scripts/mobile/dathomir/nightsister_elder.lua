@@ -19,7 +19,7 @@ nightsister_elder = Creature:new {
 	hideAmount = 0,
 	boneType = "",
 	boneAmount = 0,
-	milk = 0,
+	milk = 2 * 0,
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
@@ -41,8 +41,23 @@ nightsister_elder = Creature:new {
 				{group = "carbines", chance = 900000},
 				{group = "melee_weapons", chance = 2000000},
 				{group = "wearables_scarce", chance = 500000}
-			}
-		}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "power_crystals", chance = 900000},
+				{group = "nightsister_common", chance = 2600000},
+				{group = "pistols", chance = 1000000},
+				{group = "rifles", chance = 1000000},
+				{group = "carbines", chance = 1000000},
+				{group = "melee_weapons", chance = 2000000},
+				{group = "armor_attachments", chance = 500000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "wearables_rare", chance = 500000}
+			},
+			lootChance = 5000000
+			},
 	},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",

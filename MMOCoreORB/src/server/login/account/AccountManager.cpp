@@ -111,7 +111,7 @@ Account* AccountManager::validateAccountCredentials(LoginClient* client, const S
 			account = createAccount(username, password, passwordStored);
 		} else {
 			if(client != NULL)
-				client->sendErrorMessage("Login Error", "Automatic registration is currently disabled. Please contact the administrators of the server in order to get an authorized account.");
+				client->sendErrorMessage("Login Error", "The account name does not exist, please visit www.swginfinity.com/play-now to create an account.");
 			return NULL;
 		}
 	}
@@ -119,7 +119,7 @@ Account* AccountManager::validateAccountCredentials(LoginClient* client, const S
 	if(!account->isActive()) {
 
 		if(client != NULL)
-			client->sendErrorMessage("Account Disabled", "The server administrators have disabled your account.");
+			client->sendErrorMessage("Account Not Active", "You must activate your account by visiting swginfinity.com/play-now and re-requesting activation.");
 
 		return NULL;
 	}
@@ -147,7 +147,7 @@ Account* AccountManager::validateAccountCredentials(LoginClient* client, const S
 	if(account->isBanned()) {
 
 		StringBuffer reason;
-		reason << "Your account has been banned from the server by the administrators.\n\n";
+		reason << "You are not worthy to play on Infinity.\n\n";
 		int totalBan = account->getBanExpires() - time(0);
 
 		int daysBanned = floor((float)totalBan / 60.f / 60.f / 24.f);

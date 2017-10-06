@@ -22,9 +22,6 @@ includeFile("groups/skill_buffs.lua")
 includeFile("groups/tailor_components.lua")
 includeFile("groups/treasure_map_group.lua")
 
---custom subfolder
-includeFile("groups/custom/melee_weapons_custom.lua")
-includeFile("groups/custom/ranged_weapons_custom.lua")
 -- armor sub-folder
 includeFile("groups/armor/armor_all.lua")
 includeFile("groups/armor/bone_armor.lua")
@@ -366,6 +363,9 @@ includeFile("groups/wearables/wearables_uncommon.lua")
 includeFile("groups/weapon/infinity_lightsaber.lua")
 includeFile("groups/named_crystals.lua")
 
+includeFile("groups/npc/meatlump_melee_components.lua")
+includeFile("groups/npc/meatlump_ranged_components.lua")
+
 -- named crystals
 includeFile("groups/crystal_mauls_vengence.lua")
 includeFile("groups/crystal_qui_gons_devotion.lua")
@@ -386,3 +386,18 @@ includeFile("groups/crystal_strength_of_luminaria.lua")
 includeFile("groups/crystal_sunriders_destiny.lua")
 includeFile("groups/crystal_ulics_redemption.lua")
 includeFile("groups/crystal_windus_guile.lua")
+
+-- smuggler sub-folder
+-- includeFile("groups/smuggler/smug_armor.lua")
+-- includeFile("groups/smuggler/smug_medical.lua")
+-- includeFile("groups/smuggler/smug_wep.lua")
+
+------------------------------Boogles Custom------------------------------
+--Geo--
+includeFile("groups/geonosian_lab/boogles_geo_group/geonosian_epic.lua")
+includeFile("groups/geonosian_lab/boogles_geo_group/geo_rancor.lua")
+--Geo--
+--Wearables--
+includeFile("groups/wearables/boogles_wearables_geo/mastery_geocave_jewelry.lua")
+--Wearables--
+------------------------------Boogles Custom------------------------------

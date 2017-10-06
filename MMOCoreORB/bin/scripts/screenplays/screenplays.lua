@@ -273,9 +273,6 @@ includeFile("events/conversations/bestine_election/seans_historian_conv_handler.
 includeFile("events/conversations/bestine_election/tour_aryon_conv_handler.lua")
 includeFile("events/conversations/bestine_election/victor_visalis_conv_handler.lua")
 
-includeFile("events/engineer_screenplay.lua")
-includeFile("events/alucard_screenplay.lua")
-
 -- Events
 includeFile("events/conversations/bestine_artist_conv_handler.lua")
 includeFile("events/conversations/imperial_commander_conv_handler.lua")
