@@ -2026,34 +2026,15 @@ void PlayerObjectImplementation::setForcePower(int fp, bool notifyClient) {
 
 }
 
-void PlayerObjectImplementation::doForceRegen() {
-	CreatureObject* creature = dynamic_cast<CreatureObject*>(parent.get().get());
-
-	if (creature == NULL || creature->isIncapacitated() || creature->isDead())
-		return;
-
+void PlayerObjectImplementation::doForceRegen(uint32 regen_amount) {
 	//const static uint32 tick = 5;
 
 	// Get player ForceRegen skillMod, and then divide by 5 to get tickrate for every 2 seconds.
 	// Round this to nearest int.
-	uint32 tick = creature->getSkillMod("jedi_force_power_regen");
-	tick = round(tick / 5);
-
-	uint32 modifier = 1;
-
-	if (creature->isMeditating()) {
-		Reference<ForceMeditateTask*> medTask = creature->getPendingTask("forcemeditate").castTo<ForceMeditateTask*>();
-
-		if (medTask != NULL)
-			modifier = 3;
-	}
-
-	uint32 forceTick = tick * modifier;
-
-	if (forceTick > getForcePowerMax() - getForcePower()){   // If the player's Force Power is going to regen again and it's close to max,
+	if (regen_amount > getForcePowerMax() - getForcePower()){   // If the player's Force Power is going to regen again and it's close to max,
 		setForcePower(getForcePowerMax());             // Set it to max, so it doesn't go over max.
 	} else {
-		setForcePower(getForcePower() + forceTick); // Otherwise regen normally.
+		setForcePower(getForcePower() + regen_amount); // Otherwise regen normally.
 	}
 }
 
